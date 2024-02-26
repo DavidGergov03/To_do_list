@@ -58,8 +58,8 @@ actions = {
     3: view_all_tasks,
     4: lambda: print("Thank you for using the app!")
 }
-
-while True:
+user_choice = 0
+while user_choice != 4:
     main_menu()
     user_choice = int(input("Enter your choice (1-4): "))
     match user_choice:
