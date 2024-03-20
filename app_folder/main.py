@@ -52,18 +52,20 @@ def view_all_tasks():
 
 all_tasks = []
 
-actions = {
-    1: add_new_task,
-    2: mark_task_as_completed,
-    3: view_all_tasks,
-    4: lambda: print("Thank you for using the app!")
-}
 user_choice = 0
 while user_choice != 4:
     main_menu()
     user_choice = int(input("Enter your choice (1-4): "))
-    match user_choice:
-        case 1 | 2 | 3 | 4:
-            actions[user_choice]()
-        case _:
-            print("Please select a valid number!")
+    if user_choice == 1:
+        add_new_task()
+    elif user_choice == 2:
+        mark_task_as_completed()
+    elif user_choice == 3:
+        view_all_tasks()
+    elif user_choice == 4:
+        print("Thank you for using the app!")
+        break
+    else:
+        print("Please enter a valid number!")
+
+
